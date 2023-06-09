@@ -19,7 +19,7 @@
     <modules>
         <module>isoftstone-s3-bulk-importer-core</module>
         <module>isoftstone-s3-bulk-importer-web-ui</module>
-        <module>isoftstone-s3-bulk-importer</module>
+        <module>isoftstone-s3-bulk-importer-package</module>
     </modules>
 
     <properties>
