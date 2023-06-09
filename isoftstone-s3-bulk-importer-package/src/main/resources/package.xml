@@ -17,6 +17,7 @@
   <dependencies>
     <package>amazon-s3-online-storage</package>
     <package>nuxeo-web-ui</package>
+    <package>nuxeo-2021-HF20</package>
   </dependencies>
   <license>Apache License, Version 2.0</license>
   <license-url>http://www.apache.org/licenses/LICENSE-2.0</license-url>
