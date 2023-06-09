@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="s3bulkimport" version="2021.20.0">
+    <require>default-repository-config</require>
+    <require>org.nuxeo.ecm.core.blob.BlobManager</require>
+    <require>com.iss.nuxeo.bulkimport.source.FileSourceManager</require>
+    <extension target="com.iss.nuxeo.bulkimport.source.FileSourceManager" point="configuration">
+        <filesetProvider id="default">
+            <class>com.iss.nuxeo.bulkimport.s3.S3FileSourceProvider</class>
+            <property name="sourceBlobProvider">s3BulkImportSourceBlobProvider</property>
+            <property name="transientBlobProvider">s3BulkImportTransientBlobProvider</property>
+            <property name="useFirstPass">false</property>
+            <property name="location.root">/</property>
+            <property name="excludes">.DS_STORE,Thumbs.db</property>
+            <property name="includes"></property>
+            <property name="meta.extensions"></property>
+        </filesetProvider>
+    </extension>
+    <extension target="org.nuxeo.ecm.core.blob.BlobManager" point="configuration">
+        <blobprovider name="s3BulkImportSourceBlobProvider">
+            <class>${nuxeo.bulk.import.core.binarymanager}</class>
+            <property name="awsid">${nuxeo.s3storage.import.source.awsid}</property>
+            <property name="awssecret">${nuxeo.s3storage.import.source.awssecret}</property>
+            <property name="awstoken">${nuxeo.s3storage.import.source.awstoken}</property>
+            <property name="bucket">${nuxeo.s3storage.import.source.bucket}</property>
+            <property name="region">${nuxeo.s3storage.import.source.region}</property>
+            <property name="endpoint">${nuxeo.s3storage.import.source.endpoint}</property>
+            <property name="pathstyleaccess">${nuxeo.s3storage.import.source.pathstyleaccess}</property>
+            <property name="accelerateMode">${nuxeo.s3storage.import.source.accelerateMode}</property>
+            <property name="bucket_prefix">${nuxeo.s3storage.import.source.bucket_prefix}</property>
+            <!-- min file age, in second, to be removed from cache if the size max size is reached, default is 3600 -->
+            <property name="cacheminage">60</property>
+            <property name="cachesize">${nuxeo.s3storage.import.source.cachesize}</property>
+            <property name="connection.max">50</property>
+            <property name="connection.retry">3</property>
+            <property name="connection.timeout">${nuxeo.s3storage.import.source.connection.timeout}</property>
+            <property name="socket.timeout">${nuxeo.s3storage.import.source.socket.timeout}</property>
+            <property name="singlepart.maxsize">${nuxeo.s3storage.import.source.singlepart.maxsize}</property>
+            <property name="trace.level">${nuxeo.s3storage.import.source.trace.level}</property>
+        </blobprovider>
+    </extension>
+    <extension target="org.nuxeo.ecm.core.blob.BlobManager" point="configuration">
+        <blobprovider name="s3BulkImportTransientBlobProvider">
+            <class>${nuxeo.bulk.import.core.binarymanager}</class>
+            <property name="awsid">${nuxeo.s3storage.import.transient.awsid}</property>
+            <property name="awssecret">${nuxeo.s3storage.import.transient.awssecret}</property>
+            <property name="awstoken">${nuxeo.s3storage.import.transient.awstoken}</property>
+            <property name="bucket">${nuxeo.s3storage.import.transient.bucket}</property>
+            <property name="region">${nuxeo.s3storage.import.transient.region}</property>
+            <property name="endpoint">${nuxeo.s3storage.import.transient.endpoint}</property>
+            <property name="pathstyleaccess">${nuxeo.s3storage.import.transient.pathstyleaccess}</property>
+            <property name="accelerateMode">${nuxeo.s3storage.import.transient.accelerateMode}</property>
+            <property name="bucket_prefix">${nuxeo.s3storage.import.transient.bucket_prefix}</property>
+            <!-- min file age, in second, to be removed from cache if the size max size is reached, default is 3600 -->
+            <property name="cacheminage">60</property>
+            <property name="cachesize">${nuxeo.s3storage.import.transient.cachesize}</property>
+            <property name="connection.max">50</property>
+            <property name="connection.retry">3</property>
+            <property name="connection.timeout">${nuxeo.s3storage.import.transient.connection.timeout}</property>
+            <property name="socket.timeout">${nuxeo.s3storage.import.transient.socket.timeout}</property>
+            <property name="singlepart.maxsize">${nuxeo.s3storage.import.transient.singlepart.maxsize}</property>
+            <property name="trace.level">${nuxeo.s3storage.import.transient.trace.level}</property>
+            <property name="transient">true</property>
+        </blobprovider>
+    </extension>
+</component>

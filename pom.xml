@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.nuxeo</groupId>
+        <artifactId>nuxeo-parent</artifactId>
+        <version>2021.20</version>
+    </parent>
+
+    <groupId>com.iss.nuxeo</groupId>
+    <artifactId>isoftstone-s3-bulk-importer-parent</artifactId>
+    <version>2021.20.0</version>
+    <packaging>pom</packaging>
+    <name>ISoftStone S3 Bulk Importer Parent</name>
+    <description>ISoftStone S3 Bulk Importer Parent</description>
+
+    <modules>
+        <module>isoftstone-s3-bulk-importer-core</module>
+        <module>isoftstone-s3-bulk-importer-web-ui</module>
+        <module>isoftstone-s3-bulk-importer</module>
+    </modules>
+
+    <properties>
+        <!--    <project.version>1.0.0</project.version>-->
+        <nuxeo.version>2021.20</nuxeo.version>
+        <nuxeo.skip.enforcer>true</nuxeo.skip.enforcer>
+        <nuxeo.target.version>2021.20</nuxeo.target.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.iss.nuxeo</groupId>
+                <artifactId>isoftstone-s3-bulk-importer-core</artifactId>
+                <version>2021.20.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iss.nuxeo</groupId>
+                <artifactId>isoftstone-s3-bulk-importer-web-ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iss.nuxeo</groupId>
+                <artifactId>isoftstone-s3-bulk-importer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <repositories>
+        <repository>
+            <id>maven-public</id>
+            <url>https://packages.nuxeo.com/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven-private</id>
+            <url>https://packages.nuxeo.com/repository/maven-private/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,67 @@
+<!--
+`iss-bulk-import-button`
+@group Nuxeo UI
+@element iss-bulk-import-button
+-->
+<dom-module id="iss-bulk-import-button">
+  <template>
+    <style include="nuxeo-action-button-styles">
+      /* Add your custom styles here */
+    </style>
+    <div class="action" on-tap="_run">
+      <paper-icon-button id="bt" icon="[[icon]]"></paper-icon-button>
+      <span class="label" hidden$="[[!showLabel]]">[[label]]</span>
+    </div>
+    <paper-tooltip for="bt">[[label]]</paper-tooltip>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'iss-bulk-import-button',
+      properties: {
+
+        /**
+         * Label to display in the action button.
+         */
+        label: {
+          type: String,
+          value: 'Action Label'
+        },
+
+        /**
+         * `true` if the action should display the label, `false` otherwise.
+         */
+        showLabel: {
+          type: Boolean,
+          value: false,
+        },
+
+        /**
+         * Icon to use (iconset_name:icon_name) in the action button.
+         */
+        icon: {
+          type: String,
+          value: 'iconset_name:icon_name'
+        },
+        
+        document: {
+          type: Object
+        } 
+      },
+
+      /**
+       * Callback executed when the user presses the action button.
+       */
+      _run: function() {
+        if (this.document) {
+          window.open(Nuxeo.UI.config.serverURL+"/site/issFileImporter?targetPath="+encodeURIComponent(this.document.path),"_blank")
+        } else {
+          this.fire('notify', {
+            message: this.i18n('label.action.bulk.import.nodocument')
+          });
+        }
+      }
+    });
+  </script>
+</dom-module>

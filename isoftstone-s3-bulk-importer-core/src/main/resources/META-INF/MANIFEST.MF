@@ -1,0 +1,10 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 2021.20.0
+Bundle-Vendor: com.iss.nuxeo
+Bundle-Version: 2021.20.0
+Bundle-Name: ISoftstone S3 Bulk Importer
+Bundle-ManifestVersion: 1
+Bundle-SymbolicName: com.iss.nuxeo.bulkimport.core;singleton=true
+Nuxeo-WebModule: com.iss.nuxeo.bulkimport.jaxrs.BulkImportWebApp;name=isoftstone-s3-bulk-importer-core;extends=base
+Nuxeo-Component: OSGI-INF/bulkimport-contrib.xml, OSGI-INF/bulkimport-filesource-manager.xml

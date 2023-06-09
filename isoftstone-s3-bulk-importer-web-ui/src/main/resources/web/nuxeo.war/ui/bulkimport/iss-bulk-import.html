@@ -1,0 +1,13 @@
+<link rel="import" href="../actions/iss-bulk-import-button.html" />
+<link rel="import" href="../icons/iss-bulk-import-icons.html" />
+
+
+<nuxeo-slot-content name="s3BulkImportAction" slot="DOCUMENT_ACTIONS">
+  <template>
+    <nuxeo-filter document="[[document]]" facet="Folderish" permission="ReadWrite">
+      <template>
+        <iss-bulk-import-button document="[[document]]" icon="bulkimport:import" label="Begin Bulk Import"></iss-bulk-import-button>
+      </template>
+    </nuxeo-filter>
+  </template>
+</nuxeo-slot-content>

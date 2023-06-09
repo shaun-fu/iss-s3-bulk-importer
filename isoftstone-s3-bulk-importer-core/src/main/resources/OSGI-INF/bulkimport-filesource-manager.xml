@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="com.iss.nuxeo.bulkimport.source.FileSourceManager" version="1.0">
+    <implementation class="com.iss.nuxeo.bulkimport.source.FileSourceManagerComponent" />
+    <service>
+        <provide interface="com.iss.nuxeo.bulkimport.source.FileSourceManager" />
+    </service>
+    <extension-point name="configuration">
+        <object class="com.iss.nuxeo.bulkimport.source.FileSourceProviderDescriptor" />
+    </extension-point>
+</component>

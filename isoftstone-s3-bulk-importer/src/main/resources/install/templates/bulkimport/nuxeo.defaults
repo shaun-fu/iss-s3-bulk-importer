@@ -1,0 +1,47 @@
+nuxeo.template.includes=common
+
+##############################
+## Bulk Import config START ##
+##############################
+
+nuxeo.bulk.import.core.binarymanager=org.nuxeo.ecm.core.storage.sql.S3BinaryManager
+
+# mandatory
+nuxeo.s3storage.import.source.awsid=
+nuxeo.s3storage.import.source.awssecret=
+nuxeo.s3storage.import.source.awstoken=
+nuxeo.s3storage.import.source.bucket=
+nuxeo.s3storage.import.source.region=
+
+# optional
+nuxeo.s3storage.import.source.endpoint=
+nuxeo.s3storage.import.source.pathstyleaccess=true
+nuxeo.s3storage.import.source.accelerateMode=false
+nuxeo.s3storage.import.source.bucket_prefix=
+nuxeo.s3storage.import.source.cachesize=100MB
+nuxeo.s3storage.import.source.connection.timeout=600000
+nuxeo.s3storage.import.source.socket.timeout=60000
+nuxeo.s3storage.import.source.singlepart.maxsize=5G
+nuxeo.s3storage.import.source.trace.level=info
+
+# mandatory
+nuxeo.s3storage.import.transient.awsid=
+nuxeo.s3storage.import.transient.awssecret=
+nuxeo.s3storage.import.transient.awstoken=
+nuxeo.s3storage.import.transient.bucket=
+nuxeo.s3storage.import.transient.region=
+
+# optional
+nuxeo.s3storage.import.transient.endpoint=
+nuxeo.s3storage.import.transient.pathstyleaccess=true
+nuxeo.s3storage.import.transient.accelerateMode=false
+nuxeo.s3storage.import.transient.bucket_prefix=
+nuxeo.s3storage.import.transient.cachesize=100MB
+nuxeo.s3storage.import.transient.connection.timeout=60000
+nuxeo.s3storage.import.transient.socket.timeout=60000
+nuxeo.s3storage.import.transient.singlepart.maxsize=5G
+nuxeo.s3storage.import.transient.trace.level=info
+
+##############################
+## Bulk Import config END ##
+##############################

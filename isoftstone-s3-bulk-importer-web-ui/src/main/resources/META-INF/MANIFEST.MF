@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-Vendor: com.iss.nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 2021.20.0
+Bundle-Name: ISoftstone S3 Bulk Importer Web
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.iss.nuxeo.bulkimport.web.ui;singleton:=true
+Nuxeo-Component: OSGI-INF/bulkimport-webresources-contrib.xml, OSGI-INF/webui-enrichers-contrib.xml

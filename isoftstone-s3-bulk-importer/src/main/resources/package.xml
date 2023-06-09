@@ -1,0 +1,24 @@
+<!-- See documentation at http://doc.nuxeo.com/x/HgIz -->
+<package type="addon" name="isoftstone-s3-bulk-importer" version="2021.20">
+  <title>ISoftStone S3 Bulk Importer</title>
+  <description>
+    <p>ISoftStone S3 Bulk Importer Addon</p>
+  </description>
+  <vendor>ISoftStone</vendor>
+  <installer restart="true" />
+  <uninstaller restart="true" />
+  <nuxeo-validation>none</nuxeo-validation>
+  <production-state>production_ready</production-state>
+  <supported>true</supported>
+  <target-platform>
+    <name>lts</name>
+    <version>[2021.20,)</version>
+  </target-platform>
+  <dependencies>
+    <package>amazon-s3-online-storage</package>
+    <package>nuxeo-web-ui</package>
+  </dependencies>
+  <license>Apache License, Version 2.0</license>
+  <license-url>http://www.apache.org/licenses/LICENSE-2.0</license-url>
+  <visibility>MARKETPLACE</visibility>
+</package>

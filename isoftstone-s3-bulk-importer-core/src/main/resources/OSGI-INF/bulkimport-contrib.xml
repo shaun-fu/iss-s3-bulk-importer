@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="com.iss.nuxeo.bulkimport.service.BulkImportComponent.contrib" version="1.0">
+    <require>
+        org.nuxeo.ecm.platform.importer.service.jaxrs.contrib
+    </require>
+    <extension target="org.nuxeo.ecm.platform.importer.service.DefaultImporterComponent" point="importerConfiguration">
+    <importerConfig sourceNodeClass ="com.iss.nuxeo.bulkimport.s3.S3SourceNode" >
+
+<!-- You can define custom leafType and folderishType by overriding the documentModelFactory here/>-->
+        <documentModelFactory documentModelFactoryClass="com.iss.nuxeo.bulkimport.factories.HeuristicDocumentModelFactory"
+                              leafType="File" folderishType="Folder" />
+
+        <repository>default</repository>
+        <enablePerfLogging>true</enablePerfLogging>
+    </importerConfig>
+    </extension>
+</component>
+

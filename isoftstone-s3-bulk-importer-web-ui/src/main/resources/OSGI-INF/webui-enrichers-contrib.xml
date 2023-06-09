@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="iss.bulk.import.webuienrichers">
+    <extension target="org.nuxeo.runtime.ConfigurationService" point="configuration">
+        <!-- used by iss-bulk-import-button.html to generate the import form url. -->
+        <property name="org.nuxeo.web.ui.serverURL">${nuxeo.url}</property>
+    </extension>
+</component>
+

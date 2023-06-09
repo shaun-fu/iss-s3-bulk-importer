@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<component name="com.iss.bulk.import.web.resources.contrib">
+
+  <require>org.nuxeo.ecm.platform.WebResources</require>
+
+  <extension target="org.nuxeo.ecm.platform.WebResources" point="resources">
+    <resource name="iss-bulk-import.html" type="import" shrinkable="false">
+      <uri>/ui/bulkimport/iss-bulk-import.html</uri>
+    </resource>
+  </extension>
+
+  <extension target="org.nuxeo.ecm.platform.WebResources" point="bundles">
+    <bundle name="web-ui">
+      <resources append="true">
+        <resource>iss-bulk-import.html</resource>
+      </resources>
+    </bundle>
+  </extension>
+
+</component>
